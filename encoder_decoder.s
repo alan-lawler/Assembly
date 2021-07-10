@@ -1,10 +1,15 @@
+; The encoder encodes each byte of a given address space using one of nine different XOR keys.
+; The key is changed after each XOR operation. The encoder will cycle through each key and start over
+; once it uses the last key.
+
+
 global _start
 section .text
 _start:
 
 PUSHAD                                                                  ; saves registers
 PUSHFD                                                                  ; saves flags
-MOV ESI, 0x00401000 ; start of encode/decode
+MOV ESI, 0x00401000                                                     ; start of encode/decode
 PUSH ESI                                                                ; push address to stack
 
 GetKey:
