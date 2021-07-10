@@ -1,2 +1,2 @@
 # Assembly
-Collection of reverse shells written in assembly
+A collection of reverse shells written in assembly
