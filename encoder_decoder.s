@@ -41,7 +41,7 @@ JMP Decipher                                                            ; keep e
 
 Fin:
 POPFD                                                                   ; restores flags (not really, should add pop address
-                                                                          before this command)
+                                                                        ; before this command)
 POPAD                                                                   ; restores registers (not really, same as above)
 
 RET                                                                     ; not used - change to jmp address in debugger
