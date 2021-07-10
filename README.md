@@ -1,2 +1,2 @@
 # Assembly
-A collection of reverse shells written in assembly
+A collection of tools written in assembly I used in past penetration tests. They no longer bypass AV...
